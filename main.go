@@ -14,7 +14,6 @@ func main() {
 	e := echo.New()
 
 	// Mengatur rute-rute API
-
 	e.GET("/puisi", controller.GetPuisi)
 	e.GET("/puisi/:id", controller.GetPuisiByID)
 	e.POST("/puisi", controller.CreatePuisi)

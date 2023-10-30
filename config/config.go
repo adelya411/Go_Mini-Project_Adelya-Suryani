@@ -15,7 +15,7 @@ func InitDataBase() {
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {
-		panic("Tidak dapat konek ke Database")
+		panic("Can't Connect to Database")
 	}
 
 	Migration()
@@ -24,4 +24,6 @@ func InitDataBase() {
 func Migration() {
 	DB.AutoMigrate(&models.Puisi{})
 	DB.AutoMigrate(&models.User{})
+	DB.AutoMigrate(&models.Kategori{})
+	DB.AutoMigrate(&models.Rating{})
 }
